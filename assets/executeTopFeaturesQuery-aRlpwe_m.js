@@ -1,1 +1,0 @@
-import{oa as s,o_ as i}from"./index-BnKeSEIF.js";import{m as n}from"./queryTopFeatures-BQaKVFBd.js";import p from"./TopFeaturesQuery-Bg4djgbY.js";async function x(o,r,t,a){const m=s(o),e={...a},{data:f}=await n(m,p.from(r),t,e);return i.fromJSON(f)}export{x as executeTopFeaturesQuery};
