@@ -64,7 +64,7 @@ const Chart = () => {
         perc: chartData[2] || 0,
       };
     },
-    staleTime: Infinity,
+    // staleTime: Infinity,
   });
   const chartData = data?.chartData || [];
   const totaln = data?.totaln || 0;
