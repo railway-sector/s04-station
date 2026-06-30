@@ -3,7 +3,7 @@ import { stColumnLayer, sublayersAll, queryc, chartstack } from "../layers";
 import SubLayerView from "@arcgis/core/views/layers/BuildingComponentSublayerView";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
-import { thousands_separators, zoomToLayer } from "../Query";
+import { thousands_separators, zoomToLayer } from "../query";
 import { ArcgisScene } from "@arcgis/map-components/dist/components/arcgis-scene";
 import {
   chart_colors,
@@ -13,10 +13,10 @@ import {
   statusArray,
   structureTypes,
 } from "../uniqueValues";
-import { chartRenderer, resetAllLayers } from "../ChartRenderer";
+import { chartRenderer, resetAllLayers, resetQuerc } from "../chartRenderer";
 import { MyContext } from "../contexts/MyContext";
 import FeatureFilter from "@arcgis/core/layers/support/FeatureFilter";
-import { queryDefinitionExpression } from "../QueryExpression";
+import { queryDefinitionExpression } from "../queryExpression";
 import { useQuery } from "@tanstack/react-query";
 import { legendSetter, rootSetter } from "../chartSetter";
 
@@ -164,6 +164,7 @@ const Chart = () => {
       sublayerViewFilter.filter = new FeatureFilter({
         where: undefined,
       });
+      resetQuerc(queryc);
       resetAllLayers({ layers: sublayersAll });
     }
   }, [resetButtonClicked]);
