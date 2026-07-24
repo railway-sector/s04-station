@@ -13,7 +13,7 @@ function MainChart() {
     buildingLayer.load().then(() => {
       setBuildingLayerLoaded(buildingLayer.loadStatus);
     });
-  });
+  }, []);
 
   return (
     <>
